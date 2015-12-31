@@ -1,7 +1,6 @@
 class AddUserIdToUsers < ActiveRecord::Migration
   def change
     add_column :users, :user_id, :string
-    add_column :users,
     add_column :users, :Birth_date, :integer
     add_column :users, :gender, :text
     add_column :users, :part_1, :string
