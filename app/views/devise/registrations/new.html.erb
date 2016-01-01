@@ -14,6 +14,60 @@
   </div>
 
   <div class="field">
+    <%= f.radio_button :gender, '1' %>
+    <%= f.label :gender, "男性" %>
+
+    <%= f.radio_button :gender, '0' %> 
+    <%= f.label :gender, "女性" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :誕生日 %><br>
+  <%= f.date_select(
+          :Birth_date,
+          start_year: 1930,
+          end_year:   (Time.now.year - 18),
+          default:    Date.new(1989, 1, 1)) %>
+  </div>
+
+<div class="field">
+<%= f.select :name, [
+  ["パート1", "part_1"], 
+  ["Vo:ボーカル", "part_1"],
+  ["Gt:ギター", "part_1"],
+  ["Ba:ベース", "part_1"],
+  ["Dr:ドラム", "part_1"],
+  ["Key:キーボード", "part_1"],
+  ["DJ:DJ", "part_1"],
+  ["W.W:木管楽器", "part_1"],
+  ["B.W:金管楽器", "part_1"],
+  ["Str:弦楽器", "part_1"],
+  ["Perc:打楽器", "part_1"],
+  ["Others:その他", "part_1"]] %>
+  <%= f.text_field :name , :placeholder => "例）12"  %>年
+<br>
+<%= f.select :name, [
+  ["パート2", "part_2"], 
+  ["Vo:ボーカル", "part_2"],
+  ["Gt:ギター", "part_2"],
+  ["Ba:ベース", "part_2"],
+  ["Dr:ドラム", "part_2"],
+  ["Key:キーボード", "part_2"],
+  ["DJ:DJ", "part_2"],
+  ["W.W:木管楽器", "part_2"],
+  ["B.W:金管楽器", "part_2"],
+  ["Str:弦楽器", "part_2"],
+  ["Perc:打楽器", "part_2"],
+  ["Others:その他", "part_2"]] %>
+   <%= f.text_field :name , :placeholder => "例）12"  %>年
+  </div>
+
+  <div class="field">
+    <%= f.label :ユーザID %><br />
+    <%= f.text_field :user_id%>
+  </div>
+
+  <div class="field">
     <%= f.label :パスワード %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
@@ -26,6 +80,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+ <%= radio_button 'user', 'terms', 'rails_base', {}%> 利用規約とプライバシーポリシーに同意します。
 
   <div class="actions">
     <%= f.submit  "新規登録" %>
