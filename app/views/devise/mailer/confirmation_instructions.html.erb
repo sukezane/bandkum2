@@ -1,5 +1,4 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @email %>様、この度は「バンドクム」にご登録いただきありがとうございます。
+正式なご登録は以下のリンクをクリックしてください。:</p>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '正式アカウント登録（無料）はこちら', confirmation_url(@resource, confirmation_token: @token) %></p>
