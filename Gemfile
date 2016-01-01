@@ -56,3 +56,4 @@ end
   gem 'yaml_db'
   gem 'private_pub'
   gem 'thin'
+  gem 'nifty-generators'
