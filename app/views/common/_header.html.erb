@@ -5,6 +5,7 @@
       <%= link_to root_path, :class => 'navbar-brand' do %>
         <%= image_tag 'logo.png' %> 
       <% end %>
+      <%= current_user.name %>
       <div class='navbar-collapse collapse navbar-responsive-collapse navbar-right'>
         <ul class='nav navbar-nav'>
           <li><%= link_to 'HOME', root_path %></li>
