@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
          validates :terms, acceptance: true
+         validates :name, presence: true, length: { maximum: 50 }
+ 
 end
