@@ -54,3 +54,7 @@ end
   gem 'bootstrap-material-design', '0.1.4'
   gem 'bundler'
   gem 'yaml_db'
+  gem 'nifty-generators'
+  gem 'webrick'
+  gem 'private_pub'
+  gem 'thin'

@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
          validates :terms, acceptance: true
          validates :name, presence: true, length: { maximum: 50 }
- 
+ has_many :conversations, :foreign_key => :sender_id
 end
