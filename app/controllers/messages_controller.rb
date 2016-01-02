@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     @message.save!
 
     @path = conversation_path(@conversation)
+    PrivatePub.publish_to("/messages/new", message: @message)
   end
 
   private
