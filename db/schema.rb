@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160101075403) do
+ActiveRecord::Schema.define(version: 20160103145120) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id",    limit: 4
@@ -61,11 +61,14 @@ ActiveRecord::Schema.define(version: 20160101075403) do
     t.integer  "start_at_part_2",        limit: 4
     t.string   "current_place",          limit: 255
     t.integer  "start_at_band",          limit: 4
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"

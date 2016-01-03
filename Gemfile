@@ -58,3 +58,6 @@ end
   gem 'webrick'
   gem 'private_pub'
   gem 'thin'
+
+  gem'omniauth'
+gem 'omniauth-facebook'
